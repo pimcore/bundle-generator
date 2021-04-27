@@ -1,10 +1,9 @@
 # Pimcore Bundle Generator 
 
-This bundle provides a bundle generator for Pimcore to generate bundle skeletons and give you a headstart
+This bundle provides a bundle generator for Pimcore to generate bundle skeletons and give you a head start
 for bundle development. 
 
-To generate bundle skeletons just install this bundle and use one of the two commands provided by 
-this bundle and follow the instructions:  
+To generate bundle skeletons just install this bundle, use one of the two commands provided and follow the instructions:  
 - `bundle:generate` - to generate default symfony bundles
 - `pimcore:bundle:generate` - to generate Pimcore bundles
 
