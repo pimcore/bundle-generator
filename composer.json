@@ -1,0 +1,24 @@
+{
+  "name": "pimcore/bundle-generator",
+  "license": "GPL-3.0+",
+  "type": "pimcore-bundle",
+  "description": "Pimcore Bundle Generator",
+  "config": {
+    "discard-changes": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Pimcore\\Bundle\\BundleGeneratorBundle\\": "src/"
+    }
+  },
+  "require": {
+    "pimcore/pimcore": "^10.0"
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "Pimcore\\Bundle\\BundleGeneratorBundle\\PimcoreBundleGeneratorBundle"
+      ]
+    }
+  }
+}
