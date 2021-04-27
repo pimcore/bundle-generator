@@ -117,7 +117,7 @@ EOT
             '   <comment>pimcore:</comment>',
             '   <comment>   bundles:</comment>',
             '   <comment>      search_paths:</comment>',
-            sprintf('   <comment>          %s</comment>', $bundle->getRelativeTargetDirectory())
+            sprintf('   <comment>          - %s</comment>', $bundle->getRelativeTargetDirectory())
         ];
     }
 

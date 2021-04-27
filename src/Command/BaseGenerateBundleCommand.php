@@ -262,7 +262,7 @@ EOT
             return [
                 '- Edit the <comment>composer.json</comment> file and register the bundle',
                 '  namespace in the "autoload:psr-4" section :',
-                sprintf('  <comment>%s\\\\: %s</comment>', str_replace('\\', '\\\\', $bundle->getNamespace()), $bundle->getRelativeTargetDirectory()),
+                sprintf('  <comment>"%s\\\\": "%s"</comment>', str_replace('\\', '\\\\', $bundle->getNamespace()), $bundle->getRelativeTargetDirectory()),
             ];
         }
     }
