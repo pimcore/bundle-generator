@@ -7,12 +7,12 @@ declare(strict_types=1);
  *
  * This source file is available under two different licenses:
  * - GNU General Public License version 3 (GPLv3)
- * - Pimcore Enterprise License (PEL)
+ * - Pimcore Commercial License (PCL)
  * Full copyright and license information is available in
  * LICENSE.md which is distributed with this source code.
  *
- * @copyright  Copyright (c) Pimcore GmbH (http://www.pimcore.org)
- * @license    http://www.pimcore.org/license     GPLv3 and PEL
+ *  @copyright  Copyright (c) Pimcore GmbH (http://www.pimcore.org)
+ *  @license    http://www.pimcore.org/license     GPLv3 and PCL
  */
 
 namespace Pimcore\Bundle\BundleGeneratorBundle\Command\Helper;
@@ -41,11 +41,11 @@ class QuestionHelper extends BaseQuestionHelper
     {
         $runner = function ($err, $outputResponseStatus = true) use ($output, &$errors) {
             if ($err) {
-                if($outputResponseStatus) {
+                if ($outputResponseStatus) {
                     $output->writeln('<fg=red>FAILED</>');
                 }
                 $errors = array_merge($errors, $err);
-            } else if($outputResponseStatus) {
+            } elseif ($outputResponseStatus) {
                 $output->writeln('<info>OK</info>');
             }
         };

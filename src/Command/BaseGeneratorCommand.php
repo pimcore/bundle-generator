@@ -1,10 +1,22 @@
 <?php
 
+/**
+ * Pimcore
+ *
+ * This source file is available under two different licenses:
+ * - GNU General Public License version 3 (GPLv3)
+ * - Pimcore Commercial License (PCL)
+ * Full copyright and license information is available in
+ * LICENSE.md which is distributed with this source code.
+ *
+ *  @copyright  Copyright (c) Pimcore GmbH (http://www.pimcore.org)
+ *  @license    http://www.pimcore.org/license     GPLv3 and PCL
+ */
+
 namespace Pimcore\Bundle\BundleGeneratorBundle\Command;
 
 use Pimcore\Bundle\BundleGeneratorBundle\Command\Helper\QuestionHelper;
 use Pimcore\Bundle\BundleGeneratorBundle\Generator\Generator;
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 
@@ -47,7 +59,6 @@ abstract class BaseGeneratorCommand extends Command
 
         return $this->container;
     }
-
 
     protected function getSkeletonDirs(BundleInterface $bundle = null)
     {

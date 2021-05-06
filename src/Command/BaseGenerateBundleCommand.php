@@ -1,11 +1,21 @@
 <?php
 
+/**
+ * Pimcore
+ *
+ * This source file is available under two different licenses:
+ * - GNU General Public License version 3 (GPLv3)
+ * - Pimcore Commercial License (PCL)
+ * Full copyright and license information is available in
+ * LICENSE.md which is distributed with this source code.
+ *
+ *  @copyright  Copyright (c) Pimcore GmbH (http://www.pimcore.org)
+ *  @license    http://www.pimcore.org/license     GPLv3 and PCL
+ */
+
 namespace Pimcore\Bundle\BundleGeneratorBundle\Command;
 
 use Pimcore\Bundle\BundleGeneratorBundle\Generator\BundleGenerator;
-use Pimcore\Bundle\BundleGeneratorBundle\Manipulator\ConfigurationManipulator;
-use Pimcore\Bundle\BundleGeneratorBundle\Manipulator\KernelManipulator;
-use Pimcore\Bundle\BundleGeneratorBundle\Manipulator\RoutingManipulator;
 use Pimcore\Bundle\BundleGeneratorBundle\Model\Bundle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -278,7 +288,6 @@ EOT
             sprintf('    <comment>$collection->addBundle(%s::class);,</comment>', $bundle->getBundleClassName()),
             '',
         ];
-
     }
 
     protected function updateRouting(Bundle $bundle)
@@ -297,7 +306,6 @@ EOT
             $help,
             '',
         ];
-
     }
 
     protected function updateConfiguration(OutputInterface $output, Bundle $bundle)
