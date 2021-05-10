@@ -57,7 +57,7 @@ class BaseBundleGenerator extends Generator
         $this->renderFile('bundle/DefaultController.php.twig', $dir.'/Controller/DefaultController.php', $parameters);
         $this->renderFile('bundle/DefaultControllerTest.php.twig', $bundle->getTestsDirectory().'/Controller/DefaultControllerTest.php', $parameters);
 
-        // render the services.yml/xml file
+        // render the services.yaml/xml file
         $servicesFilename = $bundle->getServicesConfigurationFilename();
         $this->renderFile(
             sprintf('bundle/%s.twig', $servicesFilename),

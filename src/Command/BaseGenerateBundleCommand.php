@@ -43,7 +43,7 @@ class BaseGenerateBundleCommand extends BaseGeneratorCommand
                 new InputOption('namespace', '', InputOption::VALUE_REQUIRED, 'The namespace of the bundle to create'),
                 new InputOption('dir', '', InputOption::VALUE_REQUIRED, 'The directory where to create the bundle', 'bundles/'),
                 new InputOption('bundle-name', '', InputOption::VALUE_REQUIRED, 'The optional bundle name'),
-                new InputOption('format', '', InputOption::VALUE_REQUIRED, 'Use the format for configuration files (php, xml, yml, or annotation)'),
+                new InputOption('format', '', InputOption::VALUE_REQUIRED, 'Use the format for configuration files (php, xml, yaml, or annotation)'),
                 new InputOption('shared', '', InputOption::VALUE_NONE, 'Are you planning on sharing this bundle across multiple applications?'),
             ])
             ->setHelp(<<<EOT
@@ -106,7 +106,7 @@ EOT
         $runner($this->updateRouting($bundle), false);
 
         if (!$bundle->shouldGenerateDependencyInjectionDirectory()) {
-            // we need to import their services.yml manually!
+            // we need to import their services.yaml manually!
             $runner($this->updateConfiguration($output, $bundle));
         }
 
@@ -254,13 +254,13 @@ EOT
         ]);
 
         $question = new Question($questionHelper->getQuestion(
-            'Configuration format (annotation, yml, xml, php)',
+            'Configuration format (annotation, yaml, xml, php)',
             $format
         ), $format);
         $question->setValidator(function ($format) {
             return Validators::validateFormat($format);
         });
-        $question->setAutocompleterValues(['annotation', 'yml', 'xml', 'php']);
+        $question->setAutocompleterValues(['annotation', 'yaml', 'xml', 'php']);
         $format = $questionHelper->ask($input, $output, $question);
         $input->setOption('format', $format);
     }
