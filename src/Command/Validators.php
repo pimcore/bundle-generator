@@ -86,11 +86,11 @@ class Validators
         $format = strtolower($format);
 
         // in case they typed "yaml", but ok with that
-        if ($format == 'yaml') {
-            $format = 'yml';
+        if ($format == 'yml') {
+            $format = 'yaml';
         }
 
-        if (!in_array($format, ['php', 'xml', 'yml', 'annotation'])) {
+        if (!in_array($format, ['php', 'xml', 'yaml', 'annotation'])) {
             throw new \RuntimeException(sprintf('Format "%s" is not supported.', $format));
         }
 

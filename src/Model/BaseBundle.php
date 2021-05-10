@@ -112,21 +112,21 @@ class BaseBundle
     }
 
     /**
-     * What is the filename for the services.yml/xml file?
+     * What is the filename for the services.yaml/xml file?
      *
      * @return string
      */
     public function getServicesConfigurationFilename()
     {
-        if ('yml' === $this->getConfigurationFormat() || 'annotation' === $this->configurationFormat) {
-            return 'services.yml';
+        if ('yaml' === $this->getConfigurationFormat() || 'annotation' === $this->configurationFormat) {
+            return 'services.yaml';
         } else {
             return 'services.'.$this->getConfigurationFormat();
         }
     }
 
     /**
-     * What is the filename for the routing.yml/xml file?
+     * What is the filename for the routing.yaml/xml file?
      *
      * If false, no routing file will be generated
      *
