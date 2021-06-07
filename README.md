@@ -13,7 +13,7 @@ follow the instructions:
 On your Pimcore X root project
 
 ```bash
-$ composer -vvv require pimcore/bundle-generator
+$ composer require pimcore/bundle-generator
 ```
 
 After that you should enable it using Pimcore Extension Manager on Admin or by using this command
