@@ -16,12 +16,10 @@ On your Pimcore X root project
 $ composer -vvv require pimcore/bundle-generator
 ```
 
-After that at `src/Kernel.php` on `registerBundlesToCollection` function register the bundle by using the following code snippet :
+After that you should enable it using Pimcore Extension Manager on Admin or by using this command
 
-```php
-if (class_exists(\Pimcore\Bundle\BundleGeneratorBundle\PimcoreBundleGeneratorBundle::class)) {
-    $collection->addBundle(new \Pimcore\Bundle\BundleGeneratorBundle\PimcoreBundleGeneratorBundle);
-}
+```bash
+$ bin/console pimcore:bundle:enable PimcoreBundleGeneratorBundle
 ```
 
 Go to your terminal/command prompt, And you're ready to rock !
