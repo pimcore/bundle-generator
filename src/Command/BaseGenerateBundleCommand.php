@@ -261,7 +261,7 @@ EOT
         if (!class_exists($bundle->getBundleClassName())) {
             return [
                 '- Edit the <comment>composer.json</comment> file and register the bundle',
-                '  namespace in the "autoload:psr-4" section :',
+                '  namespace in the "autoload:psr-4" section and run <comment>composer dump-autoload</comment>:',
                 sprintf('  <comment>"%s\\\\": "%s"</comment>', str_replace('\\', '\\\\', $bundle->getNamespace()), $bundle->getRelativeTargetDirectory()),
             ];
         }
