@@ -295,7 +295,7 @@ EOT
         if ('annotation' === $bundle->getConfigurationFormat()) {
             $help = sprintf("        <comment>resource: \"@%s/Controller/\"</comment>\n        <comment>type:     annotation</comment>\n", $bundle->getName());
         } else {
-            $help = sprintf("        <comment>resource: \"@%s/Resources/config/routing.%s\"</comment>\n", $bundle->getName(), $bundle->getConfigurationFormat());
+            $help = sprintf("        <comment>resource: \"@%s/Resources/config/pimcore/routing.%s\"</comment>\n", $bundle->getName(), $bundle->getConfigurationFormat());
         }
         $help .= "        <comment>prefix:   /</comment>\n";
 

@@ -11,7 +11,7 @@ $collection = new RouteCollection();
 
 {% block body %}
 $collection->add('{{ extension_alias }}_homepage', new Route('/{{ extension_alias }}', array(
-    '_controller' => '{{ bundle }}:Default:index',
+    '_controller' => '{{ bundle }}\Controller\DefaultController:indexAction',
 )));
 {% endblock body %}
 

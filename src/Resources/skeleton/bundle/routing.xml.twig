@@ -6,7 +6,7 @@
 
 {% block body %}
     <route id="{{ extension_alias }}_homepage" path="/{{ extension_alias }}">
-        <default key="_controller">{{ bundle }}:Default:index</default>
+        <default key="_controller">{{ bundle }}\Controller\DefaultController:indexAction</default>
     </route>
 {% endblock body %}
 </routes>

@@ -36,7 +36,7 @@ class BundleGenerator extends BaseBundleGenerator
             'extension_alias' => $bundle->getExtensionAlias(),
         ];
 
-        $routingFilename = $bundle->getRoutingConfigurationFilename() ?: 'routing.yaml';
+        $routingFilename = $bundle->getRoutingConfigurationFilename() ?: 'routing.yml';
         $routingTarget = $dir . '/Resources/config/pimcore/' . $routingFilename;
 
         // create routing file for default annotation
