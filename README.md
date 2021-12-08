@@ -19,7 +19,7 @@ $ composer require pimcore/bundle-generator
 After that you should enable it using Pimcore Extension Manager on Admin or by using this command
 
 ```bash
-$ bin/console pimcore:bundle:enable PimcoreBundleGeneratorBundle
+$ bin/console pimcore:bundle:enable Pimcore/Bundle/BundleGeneratorBundle/PimcoreBundleGeneratorBundle
 ```
 
 Go to your terminal/command prompt, And you're ready to rock !
