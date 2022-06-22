@@ -68,7 +68,7 @@ abstract class BaseGeneratorCommand extends Command
             $skeletonDirs[] = $dir;
         }
 
-        if (is_dir($dir = $this->getContainer()->get('kernel')->getRootdir().'/Resources/GeneratorBundle/skeleton')) {
+        if (is_dir($dir = $this->getContainer()->get('kernel')->getProjectDir().'/Resources/GeneratorBundle/skeleton')) {
             $skeletonDirs[] = $dir;
         }
 
