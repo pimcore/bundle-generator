@@ -102,6 +102,7 @@ EOT
         // check that the namespace is already auto loaded
         $runner($this->checkAutoloader($output, $bundle), false);
         $runner($this->checkBundleSearchDirectory($bundle), false);
+        $runner($this->checkBundlesPhp($bundle), false);
 
         $questionHelper->writeGeneratorSummary($output, $errors);
 
@@ -117,6 +118,15 @@ EOT
             '   <comment>   bundles:</comment>',
             '   <comment>      search_paths:</comment>',
             sprintf('   <comment>          - %s</comment>', $bundle->getRelativeTargetDirectory())
+        ];
+    }
+
+    protected function checkBundlesPhp(Bundle $bundle)
+    {
+        return [
+            '- Edit the application config/bundles.php and make sure',
+            sprintf('  you have added the <comment>%s</comment> to the bundles array like following: ', $bundle->getBundleClassName()),
+            sprintf('   <comment> %s::class => [\'all\' => true],</comment>', $bundle->getBundleClassName())
         ];
     }
 }

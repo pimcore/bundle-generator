@@ -357,7 +357,7 @@ EOF
         // an assumption that the kernel root dir is in a directory (like app/)
         $projectRootDirectory = $this->getContainer()->getParameter('kernel.project_dir');
 
-        if (!$this->getContainer()->get('filesystem')->isAbsolutePath($dir)) {
+        if (realpath($dir) !== $dir) {
             $dir = $projectRootDirectory.'/'.$dir;
         }
         // add trailing / if necessary

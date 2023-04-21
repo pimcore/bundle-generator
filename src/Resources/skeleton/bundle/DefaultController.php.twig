@@ -17,7 +17,7 @@ class DefaultController extends FrontendController
     /**
      * @Route("/{{ extension_alias }}")
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request): Response
     {
         return new Response('Hello world from {{ extension_alias }}');
     }

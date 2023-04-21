@@ -2,17 +2,34 @@
 
 {% block use_statements %}
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
+use Pimcore\Bundle\AdminBundle\Support\PimcoreBundleAdminSupportInterface;
 {% endblock use_statements %}
 
 {% block class_definition %}
-class {{ bundle }} extends AbstractPimcoreBundle
+class {{ bundle }} extends AbstractPimcoreBundle implements PimcoreBundleAdminSupportInterface
 {% endblock class_definition %}
 
 {% block class_body %}
-    public function getJsPaths()
+    public function getJsPaths(): array
     {
         return [
             '/bundles/{{ bundle_basename|lower }}/js/pimcore/startup.js'
         ];
     }
+
+    public function getCssPaths(): array
+    {
+        return [];
+    }
+
+    public function getEditmodeJsPaths(): array
+    {
+        return [];
+    }
+
+    public function getEditmodeCssPaths(): array
+    {
+        return [];
+    }
+
 {% endblock class_body %}
