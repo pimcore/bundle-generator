@@ -10,6 +10,11 @@ class {{ bundle }} extends AbstractPimcoreBundle implements PimcoreBundleAdminSu
 {% endblock class_definition %}
 
 {% block class_body %}
+    public function getPath(): string
+    {
+        return \dirname(__DIR__);
+    }
+
     public function getJsPaths(): array
     {
         return [

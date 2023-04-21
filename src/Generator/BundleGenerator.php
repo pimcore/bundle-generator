@@ -36,8 +36,8 @@ class BundleGenerator extends BaseBundleGenerator
             'extension_alias' => $bundle->getExtensionAlias(),
         ];
 
-        $routingFilename = $bundle->getRoutingConfigurationFilename() ?: 'routing.yml';
-        $routingTarget = $dir . '/Resources/config/pimcore/' . $routingFilename;
+        $routingFilename = $bundle->getRoutingConfigurationFilename() ?: 'routing.yaml';
+        $routingTarget = $dir . '/config/pimcore/' . $routingFilename;
 
         // create routing file for default annotation
         if ($bundle->getConfigurationFormat() == 'annotation') {
@@ -50,13 +50,13 @@ class BundleGenerator extends BaseBundleGenerator
             // update routing file created by default implementation
             $this->renderFile(
                 sprintf('bundle/%s.twig', $routingFilename),
-                $dir.'/Resources/config/pimcore/'.$routingFilename, $parameters
+                $dir.'/config/pimcore/'.$routingFilename, $parameters
             );
         }
 
         $this->renderFile(
             'js/pimcore/startup.js.twig',
-            $dir . '/Resources/public/js/pimcore/startup.js',
+            $dir . '/public/js/pimcore/startup.js',
             $parameters
         );
     }

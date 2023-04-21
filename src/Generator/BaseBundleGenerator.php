@@ -49,25 +49,25 @@ class BaseBundleGenerator extends Generator
             'extension_alias' => $bundle->getExtensionAlias(),
         ];
 
-        $this->renderFile('bundle/Bundle.php.twig', $dir.'/'.$bundle->getName().'.php', $parameters);
+        $this->renderFile('bundle/Bundle.php.twig', $dir.'/src/'.$bundle->getName().'.php', $parameters);
         if ($bundle->shouldGenerateDependencyInjectionDirectory()) {
-            $this->renderFile('bundle/Extension.php.twig', $dir.'/DependencyInjection/'.$bundle->getBasename().'Extension.php', $parameters);
-            $this->renderFile('bundle/Configuration.php.twig', $dir.'/DependencyInjection/Configuration.php', $parameters);
+            $this->renderFile('bundle/Extension.php.twig', $dir.'/src/DependencyInjection/'.$bundle->getBasename().'Extension.php', $parameters);
+            $this->renderFile('bundle/Configuration.php.twig', $dir.'/src/DependencyInjection/Configuration.php', $parameters);
         }
-        $this->renderFile('bundle/DefaultController.php.twig', $dir.'/Controller/DefaultController.php', $parameters);
+        $this->renderFile('bundle/DefaultController.php.twig', $dir.'/src/Controller/DefaultController.php', $parameters);
         $this->renderFile('bundle/DefaultControllerTest.php.twig', $bundle->getTestsDirectory().'/Controller/DefaultControllerTest.php', $parameters);
 
         // render the services.yaml/xml file
         $servicesFilename = $bundle->getServicesConfigurationFilename();
         $this->renderFile(
             sprintf('bundle/%s.twig', $servicesFilename),
-            $dir.'/Resources/config/'.$servicesFilename, $parameters
+            $dir.'/config/'.$servicesFilename, $parameters
         );
 
         if ($routingFilename = $bundle->getRoutingConfigurationFilename()) {
             $this->renderFile(
                 sprintf('bundle/%s.twig', $routingFilename),
-                $dir.'/Resources/config/pimcore/'.$routingFilename, $parameters
+                $dir.'/config/pimcore/'.$routingFilename, $parameters
             );
         }
     }
