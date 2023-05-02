@@ -11,6 +11,8 @@ class {{ bundle }} extends AbstractPimcoreBundle implements PimcoreBundleAdminCl
 {% endblock class_definition %}
 
 {% block class_body %}
+    use BundleAdminClassicTrait;
+
     public function getPath(): string
     {
         return \dirname(__DIR__);
