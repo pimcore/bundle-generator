@@ -10,16 +10,20 @@ follow the instructions:
 
 # Installation
 
-On your Pimcore X root project
+1. On your Pimcore 11 root project
 
 ```bash
 $ composer require pimcore/bundle-generator
 ```
 
-After that you should enable it using Pimcore Extension Manager on Admin or by using this command
+2. Make sure the bundle is enabled in the `config/bundles.php` file. The following lines should be added:
 
 ```bash
-$ bin/console pimcore:bundle:enable PimcoreBundleGeneratorBundle
+use Pimcore\Bundle\BundleGeneratorBundle\PimcoreBundleGeneratorBundle;
+
+return [
+    PimcoreBundleGeneratorBundle::class => ['all' => true],
+];
 ```
 
 Go to your terminal/command prompt, And you're ready to rock !

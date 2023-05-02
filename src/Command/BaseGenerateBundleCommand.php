@@ -272,7 +272,7 @@ EOT
             return [
                 '- Edit the <comment>composer.json</comment> file and register the bundle',
                 '  namespace in the "autoload:psr-4" section and run <comment>composer dump-autoload</comment>:',
-                sprintf('  <comment>"%s\\\\": "%s"</comment>', str_replace('\\', '\\\\', $bundle->getNamespace()), $bundle->getRelativeTargetDirectory()),
+                sprintf('  <comment>"%s\\\\": "%s"</comment>', str_replace('\\', '\\\\', $bundle->getNamespace()), $bundle->getRelativeTargetDirectory() . '/src'),
             ];
         }
     }
@@ -357,7 +357,7 @@ EOF
         // an assumption that the kernel root dir is in a directory (like app/)
         $projectRootDirectory = $this->getContainer()->getParameter('kernel.project_dir');
 
-        if (!$this->getContainer()->get('filesystem')->isAbsolutePath($dir)) {
+        if (realpath($dir) !== $dir) {
             $dir = $projectRootDirectory.'/'.$dir;
         }
         // add trailing / if necessary

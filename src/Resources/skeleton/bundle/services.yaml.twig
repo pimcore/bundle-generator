@@ -13,7 +13,7 @@ services:
     # controllers are imported separately to make sure they're public
     # and have a tag that allows actions to type-hint services
     {{ namespace }}\Controller\:
-        resource: '../../Controller'
+        resource: '../src/Controller'
         public: true
         tags: ['controller.service_arguments']
 

@@ -64,7 +64,7 @@ class RoutingManipulator extends Manipulator
         }
 
         if ('annotation' == $format) {
-            $code .= sprintf("    resource: \"@%s/Controller/\"\n    type:     annotation\n", $bundle);
+            $code .= sprintf("    resource: \"@%s/src/Controller/\"\n    type:     annotation\n", $bundle);
         } else {
             $code .= sprintf("    resource: \"@%s/Resources/config/%s.%s\"\n", $bundle, $path, $format);
         }
