@@ -16,7 +16,7 @@ follow the instructions:
 $ composer require pimcore/bundle-generator
 ```
 
-2. Make sure the bundle is enabled in the `config/bundles.php` fiel. The following lines should be added:
+2. Make sure the bundle is enabled in the `config/bundles.php` file. The following lines should be added:
 
 ```bash
 use Pimcore\Bundle\BundleGeneratorBundle\PimcoreBundleGeneratorBundle;
