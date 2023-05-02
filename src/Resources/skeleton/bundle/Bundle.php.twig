@@ -2,7 +2,8 @@
 
 {% block use_statements %}
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
-use Pimcore\Bundle\AdminBundle\Support\PimcoreBundleAdminSupportInterface;
+use Pimcore\Extension\Bundle\PimcoreBundleAdminClassicInterface;
+use Pimcore\Extension\Bundle\Traits\BundleAdminClassicTrait;
 {% endblock use_statements %}
 
 {% block class_definition %}
