@@ -43,7 +43,7 @@ class BaseBundle
         $this->targetDirectory = $targetDirectory;
         $this->configurationFormat = $configurationFormat;
         $this->isShared = $isShared;
-        $this->testsDirectory = $this->getTargetDirectory().'/Tests';
+        $this->testsDirectory = $this->getTargetDirectory().'/tests';
     }
 
     public function getNamespace()
