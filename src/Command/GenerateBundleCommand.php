@@ -81,7 +81,7 @@ EOT
         $questionHelper = $this->getQuestionHelper();
 
         $bundle = $this->createBundleObject($input);
-        $bundle->setTestsDirectory($bundle->getTargetDirectory() . '/Tests');
+        $bundle->setTestsDirectory($bundle->getTargetDirectory() . '/tests');
 
         $questionHelper->writeSection($output, 'Bundle generation');
 
