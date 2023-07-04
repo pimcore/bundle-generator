@@ -5,7 +5,7 @@ for bundle development.
 
 To generate bundle skeletons just install and activate this bundle, use one of the two commands provided and 
 follow the instructions:  
-- `bundle:generate` - to generate default symfony bundles
+- `generate:bundle` - to generate default symfony bundles
 - `pimcore:generate:bundle` - to generate Pimcore bundles
 
 # Installation
