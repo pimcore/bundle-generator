@@ -3,10 +3,10 @@ pimcore.registerNS("pimcore.plugin.{{ bundle }}");
 pimcore.plugin.{{ bundle }} = Class.create({
 
     initialize: function () {
-        document.addEventListener(pimcore.events.preMenuBuild, this.preMenuBuild.bind(this));
+        document.addEventListener(pimcore.events.pimcoreReady, this.pimcoreReady.bind(this));
     },
 
-    preMenuBuild: function (e) {
+    pimcoreReady: function (e) {
         // alert("{{ bundle }} ready!");
     }
 });
