@@ -1,0 +1,12 @@
+name: PHP Style
+
+on:
+  push:
+
+jobs:
+  php-style:
+    uses: pimcore/workflows-collection-public/.github/workflows/reusable-php-style.yaml@reusable-workflows
+    with:
+      head_ref: ${{ github.ref_name }}
+    secrets:
+      PHP_CS_FIXER_GITHUB_TOKEN: ${{ secrets.PHP_CS_FIXER_GITHUB_TOKEN }}
