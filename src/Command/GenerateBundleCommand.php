@@ -19,21 +19,25 @@ namespace Pimcore\Bundle\BundleGeneratorBundle\Command;
 
 use Pimcore\Bundle\BundleGeneratorBundle\Generator\BundleGenerator;
 use Pimcore\Bundle\BundleGeneratorBundle\Model\Bundle;
+use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[AsCommand(
+    name: 'pimcore:generate:bundle',
+    description: 'Generates a Pimcore bundle',
+)]
 class GenerateBundleCommand extends BaseGenerateBundleCommand
 {
     /**
      * @inheritDoc
      */
-    protected function configure()
+    protected function configure(): void
     {
         parent::configure();
 
         $this
-            ->setName('pimcore:generate:bundle')
-            ->setDescription('Generates a Pimcore bundle')
             ->setHelp(
                 <<<EOT
 The <info>%command.name%</info> command helps you generates new Pimcore bundles. If you need to create a normal Symfony
@@ -61,7 +65,7 @@ EOT
     /**
      * @inheritDoc
      */
-    protected function initialize(InputInterface $input, OutputInterface $output)
+    protected function initialize(InputInterface $input, OutputInterface $output): void
     {
         $input->setOption('format', 'annotation');
 
@@ -76,7 +80,7 @@ EOT
      *
      * @return int
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $questionHelper = $this->getQuestionHelper();
 
@@ -106,7 +110,7 @@ EOT
 
         $questionHelper->writeGeneratorSummary($output, $errors);
 
-        return 0;
+        return Command::SUCCESS;
     }
 
     protected function checkBundleSearchDirectory(Bundle $bundle)
