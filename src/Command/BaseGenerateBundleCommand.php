@@ -17,6 +17,8 @@ namespace Pimcore\Bundle\BundleGeneratorBundle\Command;
 
 use Pimcore\Bundle\BundleGeneratorBundle\Generator\BundleGenerator;
 use Pimcore\Bundle\BundleGeneratorBundle\Model\Bundle;
+use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -29,16 +31,18 @@ use Symfony\Component\HttpKernel\KernelInterface;
  *
  * The following class is copied from \Sensio\Bundle\BundleGeneratorBundle\Command\GenerateBundleCommand
  */
+#[AsCommand(
+    name: 'generate:bundle',
+    description: 'Generates a bundle',
+)]
 class BaseGenerateBundleCommand extends BaseGeneratorCommand
 {
     /**
      * @see Command
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
-            ->setName('generate:bundle')
-            ->setDescription('Generates a bundle')
             ->setDefinition([
                 new InputOption('namespace', '', InputOption::VALUE_REQUIRED, 'The namespace of the bundle to create'),
                 new InputOption('dir', '', InputOption::VALUE_REQUIRED, 'The directory where to create the bundle', 'bundles/'),
@@ -77,7 +81,7 @@ EOT
      *
      * @return int
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $questionHelper = $this->getQuestionHelper();
 
@@ -112,7 +116,7 @@ EOT
 
         $questionHelper->writeGeneratorSummary($output, $errors);
 
-        return 0;
+        return Command::SUCCESS;
     }
 
     protected function interact(InputInterface $input, OutputInterface $output)
