@@ -12,9 +12,12 @@
     }
   },
   "require": {
-    "pimcore/pimcore": "^11.0 || ^12.0"
+    "pimcore/pimcore": "^2026.1"
   },
   "extra": {
+    "branch-alias": {
+      "dev-2026.x": "2026.1.x-dev"
+    },
     "pimcore": {
       "bundles": [
         "Pimcore\\Bundle\\BundleGeneratorBundle\\PimcoreBundleGeneratorBundle"
