@@ -53,11 +53,5 @@ class BundleGenerator extends BaseBundleGenerator
                 $dir.'/config/pimcore/'.$routingFilename, $parameters
             );
         }
-
-        $this->renderFile(
-            'js/pimcore/startup.js.twig',
-            $dir . '/public/js/pimcore/startup.js',
-            $parameters
-        );
     }
 }
